@@ -37,6 +37,11 @@ alias sg="shotgun"
 alias rc="rails c"
 alias dbc="bundle exec rake db:create"
 alias dbm="bundle exec rake db:migrate"
+alias rdd="rake db:drop"
+alias rdc="rake db:create"
+alias rdm="rake db:migrate"
+alias rds="rake db:seed"
+alias db="bundle exec rake db:drop db:create db:migrate db:seed"
 alias dbset="bundle exec rake db:setup"
 alias dbr="bundle exec rake db:reset db:seed"
 alias be="bundle exec"
@@ -104,3 +109,4 @@ end
 PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 export PATH
+
