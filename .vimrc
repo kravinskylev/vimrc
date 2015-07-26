@@ -14,16 +14,44 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'skalnik/vim-vroom'
+Plugin 'Raimondi/delimitMate'
 Plugin 'rizzatti/dash.vim'
-
-map <C-i> :NERDTreeToggle<CR>
-set number " line numbers
-
-
+Plugin 'altercation/vim-colors-solarized'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" ================ Leader and other mappings =======================
+let mapleader = "\<Space>"
+set mouse=a
+
+color solarized
+set background=dark
+set backspace=indent,eol,start
+set shell=fish
+
+set hlsearch
+set incsearch
+
+"save with leader w
+nnoremap <Leader>w :w<CR>
+"save and quit with leader q
+nnoremap <Leader>q :wq<CR>
+
+"esc with j f, f j quickly
+inoremap jf <esc>
+inoremap fj <esc>
+map <Leader>p :r !pbpaste<CR>
+
 syntax on
+map <C-i> :NERDTreeToggle<CR>
+set number " line numbers
+set noswapfile
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" " Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " The Silver Searcher
 if executable('ag')
@@ -66,12 +94,9 @@ set shiftwidth=2
 set expandtab
 syntax on
 
-colorscheme slate
-
-colorscheme slate
 set lines=60 columns=200
 
-:set relativenumber
+set relativenumber
 
 " rainbow parans
 
@@ -95,3 +120,7 @@ let g:rbpt_colorpairs = [
     \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
+
+" optional completion plugins
+" Plugin 'Shougo/neocomplete.vim'
+
